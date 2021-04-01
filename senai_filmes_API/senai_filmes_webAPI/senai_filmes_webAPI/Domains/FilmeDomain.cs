@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace senai_filmes_webAPI.Domains
 {
+    /// <summary>
+    ///  classe que representa a entidade e tablea filmes
+    /// </summary>
     public class FilmeDomain
     {
         public int idFIlme { get; set; }

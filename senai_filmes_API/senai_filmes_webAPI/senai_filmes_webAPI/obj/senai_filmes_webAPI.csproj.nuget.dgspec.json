@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\senai_filmes_API\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj": {}
+    "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\backup-senai\\senai_filmes_API\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\senai_filmes_API\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj": {
+    "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\backup-senai\\senai_filmes_API\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\senai_filmes_API\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\backup-senai\\senai_filmes_API\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
         "projectName": "senai_filmes_webAPI",
-        "projectPath": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\senai_filmes_API\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
+        "projectPath": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\backup-senai\\senai_filmes_API\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
         "packagesPath": "C:\\Users\\Senaisp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\senai_filmes_API\\senai_filmes_webAPI\\senai_filmes_webAPI\\obj\\",
+        "outputPath": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\backup-senai\\senai_filmes_API\\senai_filmes_webAPI\\senai_filmes_webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Senaisp\\AppData\\Roaming\\NuGet\\NuGet.Config",
