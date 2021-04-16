@@ -55,7 +55,7 @@ namespace senai_filmes_webAPI.Controllers
         }
 
         /// <summary>
-        /// endpoint que cadastra um novo genêrp
+        /// endpoint que cadastra um novo genêro
         /// </summary>
         /// <returns>um status code 201 - created(criar)</returns>
         [HttpPost]
@@ -71,6 +71,24 @@ namespace senai_filmes_webAPI.Controllers
              return StatusCode(201);
         }
 
+        /// <summary>
+        /// endpoint que deleta e definindo a nossa rota dentro desse endopoint para poder deletar pela url atráves de um id
+        /// </summary>
+        [HttpDelete("{id}")]
+
+
+        // método para deletar passando o parâmetro id 
+        public IActionResult Delete(int id)
+        {
+            // faz a chamada para o método deletar definido lá no repository
+            _generoRepository.Deletar(id);
+
+
+            // retorna o statuscode (2004) - No COntent
+            return StatusCode(2004);
+        }
 
     }
+
 }
+

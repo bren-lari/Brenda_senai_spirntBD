@@ -45,17 +45,29 @@ namespace senai_filmes_webAPI.Repositories
             // faz uma conexão "cnx" passando a string conexão 
             using (SqlConnection cnx = new SqlConnection(stringConexao))
             {
+                            // o que nós vamos cadastrar e como esse cadastro é feito no banco de dados 
+                            // no caso como vamos inserir/cadastrar algo na tablea, a  query que será executada que é INSERT
+                            // isso que vai ser enviado para o banco de dados: INSERT INTO Generos(Nome)
+                            // VALUES ('Ficção cientifíca')
+                            //string queryInsert = "INSERT INTO Generos(Nome) VALUES ('" + cadastrarGenero.nome + " ')";
+                            // não usar aspas ou alguns caracteres na hora de cadastrar algo pois pode gerar o erro Joana D'Arc
+                            // estaríamos permitindo tb o SQL Injection
+
                 // o que nós vamos cadastrar e como esse cadastro é feito no banco de dados 
                 // no caso como vamos inserir/cadastrar algo na tablea, a  query que será executada que é INSERT
-                                      // isso que vai ser enviado para o banco de dados: INSERT INTO Generos(Nome)
-                                                                                         // VALUES ('Ficção cientifíca')
-                string queryInsert = "INSERT INTO Generos(Nome) VALUES ('" + cadastrarGenero.nome + " ')";
+                // isso que vai ser enviado para o banco de dados: INSERT INTO Generos(Nome)
+                // para não acontecer o SLQ Injection, passamos o parâmetro "@Nome" 
+                // esse parâmetro só pode ser definido com um @
+                string queryInsert = "INSERT INTO Generos(Nome) VALUES (@Nome)";
 
 
                 // comando utilizado para fazer com o que de fato o INSERT funcione ou seja executado passando o queryInsert e o cnx como qual banco que vamos 
                 // utilizar
                 using (SqlCommand ins = new SqlCommand(queryInsert, cnx))
                 {
+
+                    // estamos adicionando um parâmetro com um valor 
+                    ins.Parameters.AddWithValue("@Nome", cadastrarGenero.nome);
                     // permite a conxeção com o bd
                     cnx.Open();
 
@@ -66,9 +78,37 @@ namespace senai_filmes_webAPI.Repositories
             }
         }
 
+        /// <summary>
+        /// método criado para poder deletar um genêro atráves do id
+        /// </summary>
+        /// <param name="id">id do genêro que será deletado</param>
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            // fazer a conexão entre o bd com a slqconnection
+            using (SqlConnection dlt = new SqlConnection(stringConexao))
+            {
+
+                // declara a queryDelete que passa o parâmetro @ID 
+                string queryDelete = "DELETE FROM Generos WHERE idGenero = (@ID)";
+
+
+                // declarando o comando cmd passando a queryDelete e a conexão: dlt
+                using (SqlCommand cmd = new SqlCommand(queryDelete, dlt))
+                {
+
+                    // parâmetros adicionado passando a query @id e o id 
+                    cmd.Parameters.AddWithValue("@ID", id);
+
+                    // estamos abrindo a conexão com o bd
+                    dlt.Open();
+
+                    // comando pronto para ser executado
+                    cmd.ExecuteNonQuery();
+
+
+                }
+            }
+
         }
 
         public GeneroDomain EncontrarPorId(int id)
@@ -95,6 +135,7 @@ namespace senai_filmes_webAPI.Repositories
                 cnx.Open();
 
                 //declara o sqldatareader sdr para poder percorrer a tabela do bd Generos
+                // ele lê o nosso c#
                 // armazena e devolve no JSON ou no POSTMAN
                 SqlDataReader sdr;
 
