@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hKFPH8GcGt/NbtktwcfTiY7RLumGJGDt4CAfkBBsyowRKqiWY28BHYeU0DoKNNlgDyQCW1nPh473FDPWgGGSVA==",
+  "dgSpecHash": "5tn0eMTbJFb+ypZtZxmlaPBApJCyelOuw77qhm3N8/xopLHDS4guabXznsTpUGjX3jOxKXt248VJnodX8X5sgw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\sprint_1_bd\\exercicios_sprint_2\\Projeto T_Peoples\\senai_peoples_WebAPI\\senai_peoples_WebAPI\\senai_peoples_WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\sprint_1_bd\\exercicios_sprint_2\\Projeto_Inlock\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi..csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Senaisp\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Senaisp\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

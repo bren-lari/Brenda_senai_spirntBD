@@ -459,11 +459,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\sprint_1_bd\\exercicios_sprint_2\\Projeto T_Peoples\\senai_peoples_WebAPI\\senai_peoples_WebAPI\\senai_peoples_WebAPI.csproj",
-      "projectName": "senai_peoples_WebAPI",
-      "projectPath": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\sprint_1_bd\\exercicios_sprint_2\\Projeto T_Peoples\\senai_peoples_WebAPI\\senai_peoples_WebAPI\\senai_peoples_WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\sprint_1_bd\\exercicios_sprint_2\\Projeto_Inlock\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi..csproj",
+      "projectName": "senai.inlock.webApi.",
+      "projectPath": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\sprint_1_bd\\exercicios_sprint_2\\Projeto_Inlock\\senai.inlock.webApi\\senai.inlock.webApi\\senai.inlock.webApi..csproj",
       "packagesPath": "C:\\Users\\Senaisp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\sprint_1_bd\\exercicios_sprint_2\\Projeto T_Peoples\\senai_peoples_WebAPI\\senai_peoples_WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\Senaisp\\Desktop\\Brenda_senai_BD\\sprint_1_bd\\exercicios_sprint_2\\Projeto_Inlock\\senai.inlock.webApi\\senai.inlock.webApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Senaisp\\AppData\\Roaming\\NuGet\\NuGet.Config",
