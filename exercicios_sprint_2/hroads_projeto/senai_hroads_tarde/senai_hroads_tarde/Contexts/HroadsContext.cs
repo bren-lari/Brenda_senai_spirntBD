@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using senai.hroads.webApi_.Domains;
+using senai_hroads_tarde.Domains;
 
 #nullable disable
 
-namespace senai.hroads.webApi_.Contexts
+namespace senai_hroads_tarde.Contexts
 {
     public partial class HroadsContext : DbContext
     {
@@ -18,18 +18,18 @@ namespace senai.hroads.webApi_.Contexts
         {
         }
 
-        public virtual DbSet<Class> Classes { get; set; }
-        public virtual DbSet<ClassesHabilidade> ClassesHabilidades { get; set; }
+        public virtual DbSet<Classe> Classes { get; set; }
+        public virtual DbSet<ClasseHabilidade> ClasseHabilidades { get; set; }
         public virtual DbSet<Habilidade> Habilidades { get; set; }
-        public virtual DbSet<Personagen> Personagens { get; set; }
-        public virtual DbSet<TiposHabilidade> TiposHabilidades { get; set; }
+        public virtual DbSet<Personagem> Personagems { get; set; }
+        public virtual DbSet<TipoHabilidade> TipoHabilidades { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-7K8B2IC\\SQLEXPRESS; initial catalog=Senai_Hroads_Tarde; user Id=sa; pwd=sa132;");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-7K8B2IC\\SQLEXPRESS; initial catalog=SENAI_hroads; user Id=sa; pwd=sa132;");
             }
         }
 
@@ -37,99 +37,102 @@ namespace senai.hroads.webApi_.Contexts
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Latin1_General_CI_AS");
 
-            modelBuilder.Entity<Class>(entity =>
+            modelBuilder.Entity<Classe>(entity =>
             {
                 entity.HasKey(e => e.IdClasse)
-                    .HasName("PK__Classes__60FFF80155DF9D9E");
+                    .HasName("PK__Classe__60FFF80117E416DD");
 
-                entity.Property(e => e.IdClasse).HasColumnName("idClasse");
-
-                entity.Property(e => e.NomeClasse)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-            });
-
-            modelBuilder.Entity<ClassesHabilidade>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.Property(e => e.IdClasse).HasColumnName("idClasse");
-
-                entity.Property(e => e.IdHabilidade).HasColumnName("idHabilidade");
-
-                entity.HasOne(d => d.IdClasseNavigation)
-                    .WithMany()
-                    .HasForeignKey(d => d.IdClasse)
-                    .HasConstraintName("FK__ClassesHa__idCla__4D94879B");
-
-                entity.HasOne(d => d.IdHabilidadeNavigation)
-                    .WithMany()
-                    .HasForeignKey(d => d.IdHabilidade)
-                    .HasConstraintName("FK__ClassesHa__idHab__4E88ABD4");
-            });
-
-            modelBuilder.Entity<Habilidade>(entity =>
-            {
-                entity.HasKey(e => e.IdHabilidade)
-                    .HasName("PK__Habilida__655F752835D98C69");
-
-                entity.Property(e => e.IdHabilidade).HasColumnName("idHabilidade");
-
-                entity.Property(e => e.IdTiposHabilidades).HasColumnName("idTiposHabilidades");
-
-                entity.Property(e => e.NomeHabilidade)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.IdTiposHabilidadesNavigation)
-                    .WithMany(p => p.Habilidades)
-                    .HasForeignKey(d => d.IdTiposHabilidades)
-                    .HasConstraintName("FK__Habilidad__idTip__4BAC3F29");
-            });
-
-            modelBuilder.Entity<Personagen>(entity =>
-            {
-                entity.HasKey(e => e.IdPersonagem)
-                    .HasName("PK__Personag__E175C72E6423BA73");
-
-                entity.Property(e => e.IdPersonagem).HasColumnName("idPersonagem");
-
-                entity.Property(e => e.DataAtt)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.DataCr)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.ToTable("Classe");
 
                 entity.Property(e => e.IdClasse).HasColumnName("idClasse");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(200)
                     .IsUnicode(false);
-
-                entity.Property(e => e.Pvmaximo).HasColumnName("PVMaximo");
-
-                entity.HasOne(d => d.IdClasseNavigation)
-                    .WithMany(p => p.Personagens)
-                    .HasForeignKey(d => d.IdClasse)
-                    .HasConstraintName("FK__Personage__idCla__5165187F");
             });
 
-            modelBuilder.Entity<TiposHabilidade>(entity =>
+            modelBuilder.Entity<ClasseHabilidade>(entity =>
             {
-                entity.HasKey(e => e.IdTiposHabilidades)
-                    .HasName("PK__TiposHab__B078A3723A0EC7EF");
+                entity.HasNoKey();
 
-                entity.Property(e => e.IdTiposHabilidades).HasColumnName("idTiposHabilidades");
+                entity.ToTable("ClasseHabilidade");
 
-                entity.Property(e => e.Tipo)
+                entity.Property(e => e.IdClasse).HasColumnName("idClasse");
+
+                entity.Property(e => e.IdHabilidade).HasColumnName("idHabilidade");
+
+                entity.HasOne(d => d.IdClasseNavigation)
+                    .WithMany()
+                    .HasForeignKey(d => d.IdClasse)
+                    .HasConstraintName("FK__ClasseHab__idCla__3C69FB99");
+
+                entity.HasOne(d => d.IdHabilidadeNavigation)
+                    .WithMany()
+                    .HasForeignKey(d => d.IdHabilidade)
+                    .HasConstraintName("FK__ClasseHab__idHab__3D5E1FD2");
+            });
+
+            modelBuilder.Entity<Habilidade>(entity =>
+            {
+                entity.HasKey(e => e.IdHabilidade)
+                    .HasName("PK__Habilida__655F7528FEA69A16");
+
+                entity.ToTable("Habilidade");
+
+                entity.Property(e => e.IdHabilidade).HasColumnName("idHabilidade");
+
+                entity.Property(e => e.IdTipoHabilidade).HasColumnName("idTipoHabilidade");
+
+                entity.Property(e => e.Nome)
                     .IsRequired()
-                    .HasMaxLength(55)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.IdTipoHabilidadeNavigation)
+                    .WithMany(p => p.Habilidades)
+                    .HasForeignKey(d => d.IdTipoHabilidade)
+                    .HasConstraintName("FK__Habilidad__idTip__3A81B327");
+            });
+
+            modelBuilder.Entity<Personagem>(entity =>
+            {
+                entity.HasKey(e => e.IdPersonagem)
+                    .HasName("PK__Personag__E175C72E48C71421");
+
+                entity.ToTable("Personagem");
+
+                entity.Property(e => e.IdPersonagem).HasColumnName("idPersonagem");
+
+                entity.Property(e => e.DataAtt).HasColumnType("date");
+
+                entity.Property(e => e.DataCriacao).HasColumnType("date");
+
+                entity.Property(e => e.IdClasse).HasColumnName("idClasse");
+
+                entity.Property(e => e.Nome)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.IdClasseNavigation)
+                    .WithMany(p => p.Personagems)
+                    .HasForeignKey(d => d.IdClasse)
+                    .HasConstraintName("FK__Personage__idCla__403A8C7D");
+            });
+
+            modelBuilder.Entity<TipoHabilidade>(entity =>
+            {
+                entity.HasKey(e => e.IdTipoHabilidade)
+                    .HasName("PK__TipoHabi__B197B832F31B5E30");
+
+                entity.ToTable("TipoHabilidade");
+
+                entity.Property(e => e.IdTipoHabilidade).HasColumnName("idTipoHabilidade");
+
+                entity.Property(e => e.Descricao)
+                    .IsRequired()
+                    .HasMaxLength(200)
                     .IsUnicode(false);
             });
 
