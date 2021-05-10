@@ -7539,9 +7539,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Senaisp\\Desktop\\brenda_senai\\sprint_API\\exercicios_sprint_2\\Projeto SP.Med\\senai_spMedicalGroup_tarde\\senai_spMedicalGroup_tarde\\senai_spMedicalGroup_tarde.csproj",
-      "projectName": "senai_spMedicalGroup_tarde",
-      "projectPath": "C:\\Users\\Senaisp\\Desktop\\brenda_senai\\sprint_API\\exercicios_sprint_2\\Projeto SP.Med\\senai_spMedicalGroup_tarde\\senai_spMedicalGroup_tarde\\senai_spMedicalGroup_tarde.csproj",
+      "projectUniqueName": "C:\\Users\\Senaisp\\Desktop\\brenda_senai\\sprint_API\\exercicios_sprint_2\\Projeto SP.Med\\senai_spMedicalGroup_tarde\\senai_spMedicalGroup_tarde\\senai_spMedicalGroup.webApi.csproj",
+      "projectName": "senai_spMedicalGroup.webApi",
+      "projectPath": "C:\\Users\\Senaisp\\Desktop\\brenda_senai\\sprint_API\\exercicios_sprint_2\\Projeto SP.Med\\senai_spMedicalGroup_tarde\\senai_spMedicalGroup_tarde\\senai_spMedicalGroup.webApi.csproj",
       "packagesPath": "C:\\Users\\Senaisp\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Senaisp\\Desktop\\brenda_senai\\sprint_API\\exercicios_sprint_2\\Projeto SP.Med\\senai_spMedicalGroup_tarde\\senai_spMedicalGroup_tarde\\obj\\",
       "projectStyle": "PackageReference",
