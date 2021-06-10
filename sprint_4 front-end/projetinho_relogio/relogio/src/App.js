@@ -31,13 +31,8 @@ class Clock extends React.Component {
     };    
   }
 
-  // função para pausar o relógio
-  pausarRelogio(){
-    clearInterval(this.timerID);
-   }
-
   // utilizar os ciclos de vida
-
+  
   // ciclo de vida do nascimento
   // função será invocada automaticamento quando a classe clock
   // for renderizada, ou seja, quando chamarmos na function app
@@ -48,38 +43,52 @@ class Clock extends React.Component {
       this.thick()
     }, 1000 );
   }
-
+  
   // outro ciclo de vida
-
+  
   // quando a classe clock for removida da DOM, 
   // tudo que colocarmos dentro dessa função, irá acontecer
   // um exemplo é quando trocarmos de página
   // so pode ser usada uma vez
   componentWillUnmount(){
-     // pausar o relógio     
-     clearInterval(this.timerID);
+    // pausar o relógio     
+    clearInterval(this.timerID);
   }
-
+  
+  
+  
+  
+  // função para pausar o relógio
+  pausarRelogio(){
+    clearInterval(this.timerID);
+  }
+  
   // função para simular um comportamento de rolagem
   // meio que uma mudança de tela
   thick(){
-    // função atualizar os valores do state
-    // indicando quem vamos atualizar
+    //função atualizar os valores do state
+    //indicando quem vamos atualizar
     this.setState({
-      // aqui colocamos quem vamos atualizar
-      // e o novo valor
-       date : new Date()
+      //aqui colocamos quem vamos atualizar
+      //e o novo valor
+      date : new Date()
     });
   }
-
   
+  // função para despausar o relogio
+  despausarRelogio(){
+    this.timerID = setInterval( () => {
+      this.thick()
+    }, 1000 );
+  }
 
   render(){
     return (
-      <div> 
+      <div class= "botoes">
         <h1>Relógio</h1>
         <DataFormatada  date={this.state.date}/>
-        <button onClick={() => this.pausarRelogio()}>Pausar Botao</button>
+        <button onClick={() => this.pausarRelogio()}>Pausar Relogio</button>
+        <button onClick={() => this.despausarRelogio()}> Despausar Relogio</button>
       </div>
     )
   }
